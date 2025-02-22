@@ -1,0 +1,17 @@
+.manage-shops-container {
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .ant-btn {
+    border-radius: 5px;
+  }
+  

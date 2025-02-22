@@ -1,0 +1,35 @@
+.admin-sidebar {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #001529;
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    background: #002140;
+  }
+  
+  .ant-menu {
+    border-right: none;
+  }
+  
+  .ant-menu-item a {
+    color: #fff !important;
+  }
+  
+  .ant-menu-item:hover {
+    background: #1890ff;
+  }
+  
+  .logout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  

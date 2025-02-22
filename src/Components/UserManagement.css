@@ -1,0 +1,15 @@
+.user-management {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-table {
+    margin-top: 20px;
+  }
+  
+  .ant-btn {
+    margin-right: 8px;
+  }
+  

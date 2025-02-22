@@ -1,0 +1,26 @@
+.notifications-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #f5f5f5;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .ant-table {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ant-btn {
+    margin-right: 8px;
+  }
+  
