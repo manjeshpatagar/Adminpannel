@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Table, Button, Modal, Form, Input, Upload, Popconfirm } from "antd";
 import { PlusOutlined, DeleteOutlined, UploadOutlined } from "@ant-design/icons";
 import AdminSidebar from "./AdminSidebar";
-
 import "./AddCategories.css";
 
 const AddCategories = () => {
@@ -14,10 +13,21 @@ const AddCategories = () => {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [form] = Form.useForm();
+  const [imageUrl, setImageUrl] = useState(null);
 
   // Show modal
   const showModal = () => {
     setIsModalVisible(true);
+  };
+
+  // Handle image upload
+  const handleImageChange = ({ file }) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setImageUrl(e.target.result);
+    };
+    reader.readAsDataURL(file);
+    return false;
   };
 
   // Handle add category
@@ -25,11 +35,13 @@ const AddCategories = () => {
     const newCategory = {
       id: categories.length + 1,
       title: values.title,
-      image: values.image?.file?.thumbUrl || "https://via.placeholder.com/50",
+      image: imageUrl || "https://via.placeholder.com/50",
     };
+
     setCategories([...categories, newCategory]);
     setIsModalVisible(false);
     form.resetFields();
+    setImageUrl(null);
   };
 
   // Handle delete category
@@ -95,9 +107,10 @@ const AddCategories = () => {
               name="image"
               rules={[{ required: true, message: "Please upload an image" }]}
             >
-              <Upload listType="picture" beforeUpload={() => false}>
+              <Upload listType="picture" beforeUpload={handleImageChange} showUploadList={false}>
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>
               </Upload>
+              {imageUrl && <img src={imageUrl} alt="preview" width={50} height={50} style={{ marginTop: 10 }} />}
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit" block>

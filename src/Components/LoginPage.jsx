@@ -11,7 +11,7 @@ const LoginPage = ({ onLogin }) => {
     e.preventDefault();
     
     // Dummy authentication check (replace with real authentication)
-    if (email === "admin@example.com" && password === "admin123") {
+    if (email === "admin@manjesh.com" && password === "admin123") {
       onLogin(); // Call the login function from App.js
       navigate("/dashboard"); // Redirect to dashboard
     } else {
